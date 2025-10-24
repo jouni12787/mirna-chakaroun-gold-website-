@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirna Chakaron Jewellery</title>
+    <meta name="theme-color" content="#F9F7F2">
+    <meta name="application-name" content="ميرنا شكرون">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="ميرنا شكرون">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+    <link rel="apple-touch-icon" href="assets/logo.jpg">
+    <title>ميرنا شكرون للمجوهرات</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -120,11 +127,15 @@
             box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
         }
 
+        body.light-theme .brand-logo {
+            background: var(--light-card);
+        }
+
         .brand-logo img {
-            width: 70%;
-            height: 70%;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: none;
         }
 
         .brand-text {
@@ -1007,22 +1018,22 @@
         }
     </style>
 </head>
-<body>
+<body class="light-theme">
     <header>
         <div class="header-content">
             <div class="brand">
                 <div class="brand-logo">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 20 L60 45 L80 45 L65 60 L75 85 L50 70 L25 85 L35 60 L20 45 L40 45 Z' fill='white'/%3E%3C/svg%3E" alt="Mirna Chakaron Jewellery Logo">
+                    <img src="assets/logo.jpg" alt="شعار ميرنا شكرون للمجوهرات">
                 </div>
-                <div class="brand-text" data-en="Mirna Chakaron Jewellery" data-ar="ميرنا شكرون للمجوهرات">Mirna Chakaron Jewellery</div>
+                <div class="brand-text" data-en="Mirna Chakaron Jewellery" data-ar="ميرنا شكرون للمجوهرات">ميرنا شكرون للمجوهرات</div>
             </div>
             <div class="nav-actions">
-                <a class="nav-link" href="#goldPricing" data-en="Gold Prices" data-ar="أسعار الذهب">Gold Prices</a>
-                <a class="nav-link" href="#gallery" data-en="Collection" data-ar="المجموعة">Collection</a>
+                <a class="nav-link" href="#goldPricing" data-en="Gold Prices" data-ar="أسعار الذهب">أسعار الذهب</a>
+                <a class="nav-link" href="#gallery" data-en="Collection" data-ar="المجموعة">المجموعة</a>
                 <div class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
                 </div>
-                <div class="lang-toggle" id="langToggle" data-lang="en">
+                <div class="lang-toggle" id="langToggle" data-lang="ar">
                     <i class="fas fa-language"></i>
                 </div>
             </div>
@@ -1031,51 +1042,51 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1 data-en="Mirna Chakaron Jewellery" data-ar="ميرنا شكرون للمجوهرات">Mirna Chakaron Jewellery</h1>
-            <p class="hero-subtitle" data-en="Timeless Elegance, Crafted to Perfection" data-ar="أناقة خالدة، مصنوعة بإتقان">Timeless Elegance, Crafted to Perfection</p>
-            <p class="hero-tagline" data-en="Discover our exquisite collection of handcrafted gold jewelry, where traditional artistry meets contemporary design." data-ar="اكتشف مجموعتنا الرائعة من المجوهرات الذهبية المصنوعة يدويًا، حيث تلتقي الحرفية التقليدية بالتصميم المعاصر.">Discover our exquisite collection of handcrafted gold jewelry, where traditional artistry meets contemporary design.</p>
-            <a class="cta-button" href="#gallery" data-en="Explore Collection" data-ar="استكشف المجموعة">Explore Collection</a>
+            <h1 data-en="Mirna Chakaron Jewellery" data-ar="ميرنا شكرون للمجوهرات">ميرنا شكرون للمجوهرات</h1>
+            <p class="hero-subtitle" data-en="Timeless Elegance, Crafted to Perfection" data-ar="أناقة خالدة، مصنوعة بإتقان">أناقة خالدة، مصنوعة بإتقان</p>
+            <p class="hero-tagline" data-en="Discover our exquisite collection of handcrafted gold jewelry, where traditional artistry meets contemporary design." data-ar="اكتشف مجموعتنا الرائعة من المجوهرات الذهبية المصنوعة يدويًا، حيث تلتقي الحرفية التقليدية بالتصميم المعاصر.">اكتشف مجموعتنا الرائعة من المجوهرات الذهبية المصنوعة يدويًا، حيث تلتقي الحرفية التقليدية بالتصميم المعاصر.</p>
+            <a class="cta-button" href="#gallery" data-en="Explore Collection" data-ar="استكشف المجموعة">استكشف المجموعة</a>
         </div>
     </section>
 
     <div class="container">
         <!-- Gold Price Information -->
         <div class="gold-price-info" id="goldPricing">
-            <h3 data-en="Live Gold Pricing" data-ar="أسعار الذهب المباشرة">Live Gold Pricing</h3>
+            <h3 data-en="Live Gold Pricing" data-ar="أسعار الذهب المباشرة">أسعار الذهب المباشرة</h3>
             <div class="gold-price-display" id="goldPriceDisplay">
-                <div class="loading" data-en="Loading current gold prices..." data-ar="جاري تحميل أسعار الذهب الحالية...">Loading current gold prices...</div>
+                <div class="loading" data-en="Loading current gold prices..." data-ar="جاري تحميل أسعار الذهب الحالية...">جاري تحميل أسعار الذهب الحالية...</div>
             </div>
         </div>
 
-        <h2 class="section-title" data-en="Our Collection" data-ar="مجموعتنا">Our Collection</h2>
+        <h2 class="section-title" data-en="Our Collection" data-ar="مجموعتنا">مجموعتنا</h2>
 
         <!-- Controls -->
         <div class="controls">
             <div class="filters">
-                <button class="filter-btn active" data-filter="all" data-en="All Pieces" data-ar="كل القطع">All Pieces</button>
-                <button class="filter-btn" data-filter="Available" data-en="Available" data-ar="متوفر">Available</button>
-                <button class="filter-btn" data-filter="Sold" data-en="Sold" data-ar="مباع">Sold</button>
+                <button class="filter-btn active" data-filter="all" data-en="All Pieces" data-ar="كل القطع">كل القطع</button>
+                <button class="filter-btn" data-filter="Available" data-en="Available" data-ar="متوفر">متوفر</button>
+                <button class="filter-btn" data-filter="Sold" data-en="Sold" data-ar="مباع">مباع</button>
                 <select class="filter-btn" id="categoryFilter" style="appearance: menulist; padding: 0.6rem 1.2rem;">
-                    <option value="all" data-en="All Categories" data-ar="كل الفئات">All Categories</option>
+                    <option value="all" data-en="All Categories" data-ar="كل الفئات">كل الفئات</option>
                 </select>
             </div>
 
             <div class="sort-controls">
                 <select class="sort-select" id="sortSelect">
-                    <option value="default" data-en="Sort By" data-ar="ترتيب حسب">Sort By</option>
-                    <option value="price-low" data-en="Price: Low to High" data-ar="السعر: من الأقل للأعلى">Price: Low to High</option>
-                    <option value="price-high" data-en="Price: High to Low" data-ar="السعر: من الأعلى للأقل">Price: High to Low</option>
-                    <option value="weight-low" data-en="Weight: Low to High" data-ar="الوزن: من الأقل للأعلى">Weight: Low to High</option>
-                    <option value="weight-high" data-en="Weight: High to Low" data-ar="الوزن: من الأعلى للأقل">Weight: High to Low</option>
+                    <option value="default" data-en="Sort By" data-ar="ترتيب حسب">ترتيب حسب</option>
+                    <option value="price-low" data-en="Price: Low to High" data-ar="السعر: من الأقل للأعلى">السعر: من الأقل للأعلى</option>
+                    <option value="price-high" data-en="Price: High to Low" data-ar="السعر: من الأعلى للأقل">السعر: من الأعلى للأقل</option>
+                    <option value="weight-low" data-en="Weight: Low to High" data-ar="الوزن: من الأقل للأعلى">الوزن: من الأقل للأعلى</option>
+                    <option value="weight-high" data-en="Weight: High to Low" data-ar="الوزن: من الأعلى للأقل">الوزن: من الأعلى للأقل</option>
                 </select>
 
-                <span class="item-count" id="itemCount" data-en="0 items" data-ar="0 عنصر">0 items</span>
+                <span class="item-count" id="itemCount" data-en="0 items" data-ar="0 عنصر">0 عنصر</span>
             </div>
         </div>
 
         <!-- Gallery -->
         <div id="gallery" class="gallery">
-            <div class="loading" data-en="Loading our luxury collection..." data-ar="جاري تحميل مجموعتنا الفاخرة...">Loading our luxury collection...</div>
+            <div class="loading" data-en="Loading our luxury collection..." data-ar="جاري تحميل مجموعتنا الفاخرة...">جاري تحميل مجموعتنا الفاخرة...</div>
         </div>
     </div>
 
@@ -1091,8 +1102,8 @@
 
     <footer>
         <div class="footer-content">
-            <div class="footer-logo" data-en="Mirna Chakaron Jewellery" data-ar="ميرنا شكرون للمجوهرات">Mirna Chakaron Jewellery</div>
-            <p class="copyright">&copy; <span id="currentYear"></span> <span data-en="Mirna Chakaron Jewellery. All rights reserved." data-ar="ميرنا شكرون للمجوهرات. جميع الحقوق محفوظة.">Mirna Chakaron Jewellery. All rights reserved.</span></p>
+            <div class="footer-logo" data-en="Mirna Chakaron Jewellery" data-ar="ميرنا شكرون للمجوهرات">ميرنا شكرون للمجوهرات</div>
+            <p class="copyright">&copy; <span id="currentYear"></span> <span data-en="Mirna Chakaron Jewellery. All rights reserved." data-ar="ميرنا شكرون للمجوهرات. جميع الحقوق محفوظة.">ميرنا شكرون للمجوهرات. جميع الحقوق محفوظة.</span></p>
         </div>
     </footer>
 
@@ -1122,8 +1133,8 @@
         let currentSort = 'default';
         let currentCategory = 'all';
         let allCards = []; // Store all card elements
-        let currentLanguage = 'en';
-        let currentTheme = 'dark';
+        let currentLanguage = 'ar';
+        let currentTheme = 'light';
 
         // Function to fetch all data from Google Sheets
         async function fetchJewelryData() {
@@ -1554,7 +1565,17 @@
         // Initialize the gallery with live pricing
         async function initGallery() {
             const galleryElement = document.getElementById('gallery');
-            galleryElement.innerHTML = '<div class="loading">Loading our luxury collection...</div>';
+            const loadingTexts = {
+                en: 'Loading our luxury collection...',
+                ar: 'جاري تحميل مجموعتنا الفاخرة...'
+            };
+            const loadingElement = document.createElement('div');
+            loadingElement.className = 'loading';
+            loadingElement.setAttribute('data-en', loadingTexts.en);
+            loadingElement.setAttribute('data-ar', loadingTexts.ar);
+            loadingElement.textContent = loadingTexts[currentLanguage];
+            galleryElement.innerHTML = '';
+            galleryElement.appendChild(loadingElement);
             
             // Fetch jewelry data and gold price simultaneously
             try {
@@ -1589,40 +1610,53 @@
                 
             } catch (error) {
                 console.error('Error initializing gallery:', error);
-                galleryElement.innerHTML = '<div class="loading">Error loading data. Please try again later.</div>';
+                const errorTexts = {
+                    en: 'Error loading data. Please try again later.',
+                    ar: 'حدث خطأ أثناء تحميل البيانات. يرجى المحاولة لاحقًا.'
+                };
+                const errorElement = document.createElement('div');
+                errorElement.className = 'loading';
+                errorElement.setAttribute('data-en', errorTexts.en);
+                errorElement.setAttribute('data-ar', errorTexts.ar);
+                errorElement.textContent = errorTexts[currentLanguage];
+                galleryElement.innerHTML = '';
+                galleryElement.appendChild(errorElement);
             }
         }
 
-        // Toggle language
-        function toggleLanguage() {
-            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+        function setLanguage(lang) {
+            currentLanguage = lang === 'ar' ? 'ar' : 'en';
             document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
             document.documentElement.lang = currentLanguage;
-            
-            // Update all elements with data attributes
+
             document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
-                if (element.hasAttribute(`data-${currentLanguage}`)) {
-                    element.textContent = element.getAttribute(`data-${currentLanguage}`);
+                const newValue = element.getAttribute(`data-${currentLanguage}`);
+                if (newValue !== null) {
+                    if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement) {
+                        element.placeholder = newValue;
+                    } else {
+                        element.textContent = newValue;
+                    }
                 }
             });
-            
-            // Update the language toggle button
+
             const langToggle = document.getElementById('langToggle');
             if (langToggle) {
                 langToggle.setAttribute('data-lang', currentLanguage);
             }
-            
-            // Update prices and item count
+
             updatePricesOnly(currentGoldOz);
             filterAndSortPieces();
         }
 
-        // Toggle theme
-        function toggleTheme() {
-            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        function toggleLanguage() {
+            setLanguage(currentLanguage === 'en' ? 'ar' : 'en');
+        }
+
+        function setTheme(theme) {
+            currentTheme = theme === 'dark' ? 'dark' : 'light';
             document.body.classList.toggle('light-theme', currentTheme === 'light');
-            
-            // Update theme toggle icon
+
             const themeToggle = document.getElementById('themeToggle');
             if (themeToggle) {
                 const icon = themeToggle.querySelector('i');
@@ -1630,6 +1664,10 @@
                     icon.className = currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
                 }
             }
+        }
+
+        function toggleTheme() {
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
         }
 
         // Set up filter button event listeners
@@ -1708,6 +1746,8 @@
 
         // Initialize the gallery when the page loads
         document.addEventListener('DOMContentLoaded', () => {
+            setTheme(currentTheme);
+            setLanguage(currentLanguage);
             initGallery();
             setupFilters();
         });
