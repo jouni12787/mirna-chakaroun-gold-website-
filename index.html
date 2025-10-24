@@ -1236,6 +1236,35 @@
         let currentLanguage = 'ar';
         let currentTheme = 'light';
 
+        // Function to convert Google Drive URL to direct image URL
+        function convertDriveUrl(url) {
+            if (!url) return '';
+
+            // Extract file ID from different Google Drive URL formats
+            let fileId = '';
+
+            // Format 1: https://drive.google.com/open?id=FILE_ID
+            if (url.includes('open?id=')) {
+                fileId = url.split('open?id=')[1];
+            }
+            // Format 2: https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+            else if (url.includes('/d/')) {
+                const parts = url.split('/d/')[1].split('/');
+                fileId = parts[0];
+            }
+            // Format 3: https://drive.google.com/uc?id=FILE_ID
+            else if (url.includes('uc?id=')) {
+                fileId = url.split('uc?id=')[1];
+            }
+
+            if (fileId) {
+                // Return direct image URL for embedding
+                return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
+            }
+
+            return url;
+        }
+
         // Function to fetch all data from Google Sheets
         async function fetchJewelryData() {
             try {
@@ -1369,7 +1398,7 @@
         function createPieceCard(piece, goldOz) {
             const card = document.createElement('div');
             card.className = 'piece-card';
-            
+
             // Store data attributes for filtering and sorting
             const status = getStatus(piece);
             const category = getPieceType(piece['نوع القطعة']);
@@ -1385,16 +1414,18 @@
             card.dataset.price = isFinite(price) ? price : 0;
             card.dataset.weight = weight;
             card.dataset.category = category;
-            
-            // Use placeholder image (in a real implementation, you would use actual product photos)
-            const imageUrl = 'https://via.placeholder.com/400x300/0A0E17/D4AF37?text=Mirna+Chakaron';
-            
+
+            // Convert Google Drive URL to direct image URL
+            const imageUrl = convertDriveUrl(piece['photo or/and video ,  صورة أو/وفيديو']) || 
+                            'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+
             const statusText = currentLanguage === 'en' ? status : (status === 'Available' ? 'متوفر' : 'مباع');
             const weightText = currentLanguage === 'en' ? 'Weight' : 'الوزن';
             const karatText = currentLanguage === 'en' ? 'Karat' : 'العيار';
-            
+
             card.innerHTML = `
-                <img src="${imageUrl}" alt="${category}" class="piece-image">
+                <img src="${imageUrl}" alt="${category}" class="piece-image" 
+                     onerror="this.src='https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
                 <div class="piece-details">
                     <div class="piece-title">
                         ${category}
@@ -1588,8 +1619,9 @@
             
             if (!modal || !modalContent) return;
             
-            // Use placeholder image
-            const imageUrl = 'https://via.placeholder.com/500x400/0A0E17/D4AF37?text=Mirna+Chakaron+Jewellery';
+            // Convert Google Drive URL to direct image URL
+            const imageUrl = convertDriveUrl(piece['photo or/and video ,  صورة أو/وفيديو']) || 
+                            'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
 
             // Extract karat for calculation
             const karat = extractKarat(piece['karat , العيار']);
@@ -1615,7 +1647,8 @@
             // Populate modal content
             modalContent.innerHTML = `
                 <div class="modal-image">
-                    <img src="${imageUrl}" alt="${category}">
+                    <img src="${imageUrl}" alt="${category}" 
+                         onerror="this.src='https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
                 </div>
                 <div class="modal-details">
                     <h2 class="modal-title">${category}</h2>
