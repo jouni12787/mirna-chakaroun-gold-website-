@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirna Chakaron Jewellery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Dark Theme Colors */
+            --deep-navy: #0A0E17;
+            --rich-gold: #D4AF37;
+            --soft-gold: #F4E4A6;
+            --dark-gold: #B8941F;
+            --charcoal: #2C2C2C;
+            --light-gray: #E5E5E5;
+            --cream: #F5F1E8;
+            --dark-bronze: #8B6C3A;
+            --light-bronze: #C4A86A;
+            
+            /* Light Theme Colors */
+            --light-bg: #F9F7F2;
+            --light-text: #2C2C2C;
+            --light-card: #FFFFFF;
+            --light-border: #E5E5E5;
+            --light-accent: #B8941F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--deep-navy);
+            color: var(--cream);
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        body.light-theme {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 148, 31, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(244, 228, 166, 0.03) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body.light-theme::before {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 148, 31, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(244, 228, 166, 0.05) 0%, transparent 50%);
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #1A1F2E 100%);
+            color: var(--cream);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        body.light-theme header {
+            background: linear-gradient(135deg, var(--light-card) 0%, #F5F1E8 100%);
+            color: var(--light-text);
+            border-bottom: 1px solid rgba(184, 148, 31, 0.2);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--rich-gold), var(--dark-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .brand-logo img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .brand-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--soft-gold);
+        }
+
+        body.light-theme .brand-text {
+            color: var(--light-accent);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--soft-gold);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        body.light-theme .nav-link {
+            color: var(--light-accent);
+            background: rgba(184, 148, 31, 0.1);
+            border: 1px solid rgba(184, 148, 31, 0.2);
+        }
+
+        .nav-link:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle, .lang-toggle {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--soft-gold);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        body.light-theme .theme-toggle, body.light-theme .lang-toggle {
+            background: rgba(184, 148, 31, 0.1);
+            border: 1px solid rgba(184, 148, 31, 0.2);
+            color: var(--light-accent);
+        }
+
+        .theme-toggle:hover, .lang-toggle:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 14, 23, 0.7), rgba(10, 14, 23, 0.7)), 
+                        url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        body.light-theme .hero {
+            background: linear-gradient(rgba(249, 247, 242, 0.7), rgba(249, 247, 242, 0.7)), 
+                        url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--soft-gold);
+            letter-spacing: 1px;
+        }
+
+        body.light-theme .hero h1 {
+            color: var(--light-accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--light-bronze);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        body.light-theme .hero-subtitle {
+            color: var(--dark-bronze);
+        }
+
+        .hero-tagline {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1rem;
+            color: rgba(245, 241, 232, 0.9);
+        }
+
+        body.light-theme .hero-tagline {
+            color: rgba(44, 44, 44, 0.9);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            background: linear-gradient(135deg, var(--rich-gold), var(--dark-gold));
+            color: var(--deep-navy);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--soft-gold);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        body.light-theme .section-title {
+            color: var(--light-accent);
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--rich-gold), transparent);
+        }
+
+        body.light-theme .section-title::after {
+            background: linear-gradient(to right, transparent, var(--light-accent), transparent);
+        }
+
+        /* Gold Price Info */
+        .gold-price-info {
+            background: linear-gradient(135deg, rgba(10, 14, 23, 0.8), rgba(26, 31, 46, 0.8));
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        body.light-theme .gold-price-info {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(245, 241, 232, 0.8));
+            border: 1px solid rgba(184, 148, 31, 0.3);
+        }
+
+        .gold-price-info::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--rich-gold), var(--dark-gold));
+        }
+
+        .gold-price-info h3 {
+            margin-bottom: 1rem;
+            color: var(--soft-gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+        }
+
+        body.light-theme .gold-price-info h3 {
+            color: var(--light-accent);
+        }
+
+        .gold-price-display {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .gold-price-item {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem 1.8rem;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-weight: 600;
+            color: var(--rich-gold);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-theme .gold-price-item {
+            background: rgba(184, 148, 31, 0.1);
+            border: 1px solid rgba(184, 148, 31, 0.3);
+            color: var(--light-accent);
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: rgba(10, 14, 23, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        body.light-theme .controls {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(184, 148, 31, 0.2);
+        }
+
+        .filters {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .filter-btn {
+            background-color: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--soft-gold);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 100px;
+        }
+
+        body.light-theme .filter-btn {
+            border: 1px solid rgba(184, 148, 31, 0.4);
+            color: var(--light-accent);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--rich-gold);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        body.light-theme .filter-btn:hover {
+            border-color: var(--light-accent);
+            background: rgba(184, 148, 31, 0.1);
+        }
+
+        .filter-btn.active {
+            background-color: var(--rich-gold);
+            border-color: var(--rich-gold);
+            color: var(--deep-navy);
+            font-weight: 600;
+        }
+
+        body.light-theme .filter-btn.active {
+            background-color: var(--light-accent);
+            border-color: var(--light-accent);
+            color: var(--light-bg);
+        }
+
+        .sort-controls {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .sort-select {
+            background: rgba(10, 14, 23, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--soft-gold);
+            flex: 1;
+        }
+
+        body.light-theme .sort-select {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(184, 148, 31, 0.4);
+            color: var(--light-text);
+        }
+
+        .item-count {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--soft-gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+            flex: 1;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        body.light-theme .item-count {
+            background-color: rgba(184, 148, 31, 0.1);
+            color: var(--light-accent);
+            border: 1px solid rgba(184, 148, 31, 0.2);
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .piece-card {
+            background: linear-gradient(135deg, rgba(10, 14, 23, 0.8), rgba(26, 31, 46, 0.8));
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 3px solid var(--rich-gold);
+            cursor: pointer;
+            position: relative;
+            animation: fadeInUp 0.5s ease var(--card-delay, 0s) both;
+            backdrop-filter: blur(10px);
+        }
+
+        body.light-theme .piece-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 241, 232, 0.9));
+            border-top: 3px solid var(--light-accent);
+        }
+
+        .piece-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .piece-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        body.light-theme .piece-image {
+            border-bottom: 1px solid rgba(184, 148, 31, 0.2);
+        }
+
+        .piece-details {
+            padding: 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .piece-title {
+            font-size: 1rem;
+            color: var(--soft-gold);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        body.light-theme .piece-title {
+            color: var(--light-accent);
+        }
+
+        .piece-sku {
+            font-size: 0.7rem;
+            color: var(--light-gray);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+        }
+
+        body.light-theme .piece-sku {
+            color: var(--light-text);
+            background-color: rgba(44, 44, 44, 0.1);
+        }
+
+        .piece-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .spec-label {
+            font-size: 0.75rem;
+            color: var(--light-gray);
+        }
+
+        body.light-theme .spec-label {
+            color: var(--light-text);
+            opacity: 0.7;
+        }
+
+        .spec-value {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--cream);
+        }
+
+        body.light-theme .spec-value {
+            color: var(--light-text);
+        }
+
+        .piece-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        body.light-theme .piece-status {
+            border-top: 1px solid rgba(184, 148, 31, 0.2);
+        }
+
+        .status-available {
+            color: #4CAF50;
+            background-color: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            font-weight: 600;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+        }
+
+        .status-sold {
+            color: #F44336;
+            background-color: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            font-weight: 600;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+        }
+
+        .piece-price {
+            font-weight: bold;
+            color: var(--rich-gold);
+            font-size: 1rem;
+            text-align: right;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        body.light-theme .piece-price {
+            color: var(--light-accent);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            grid-column: 1 / -1;
+        }
+
+        body.light-theme .loading {
+            color: var(--light-text);
+            opacity: 0.7;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #1A1F2E 100%);
+            border-radius: 12px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        body.light-theme .modal {
+            background: linear-gradient(135deg, var(--light-card) 0%, #F5F1E8 100%);
+            border: 1px solid rgba(184, 148, 31, 0.3);
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--rich-gold);
+            border: none;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            color: var(--deep-navy);
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close:hover {
+            background: var(--soft-gold);
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .modal-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .modal-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: var(--soft-gold);
+            margin-bottom: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        body.light-theme .modal-title {
+            color: var(--light-accent);
+        }
+
+        .modal-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--rich-gold);
+            margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        body.light-theme .modal-price {
+            color: var(--light-accent);
+        }
+
+        .modal-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-spec-item {
+            display: flex;
+            flex-direction: column;
+            background: rgba(212, 175, 55, 0.05);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--rich-gold);
+        }
+
+        body.light-theme .modal-spec-item {
+            background: rgba(184, 148, 31, 0.05);
+            border-left: 3px solid var(--light-accent);
+        }
+
+        .modal-spec-label {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            margin-bottom: 0.25rem;
+        }
+
+        body.light-theme .modal-spec-label {
+            color: var(--light-text);
+            opacity: 0.7;
+        }
+
+        .modal-spec-value {
+            font-weight: bold;
+            color: var(--cream);
+            font-size: 0.95rem;
+        }
+
+        body.light-theme .modal-spec-value {
+            color: var(--light-text);
+        }
+
+        .modal-status {
+            display: inline-block;
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            align-self: flex-start;
+            font-size: 0.9rem;
+        }
+
+        .modal-status.status-available {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: #4CAF50;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .modal-status.status-sold {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: #F44336;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #1A1F2E 100%);
+            color: var(--cream);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        body.light-theme footer {
+            background: linear-gradient(135deg, var(--light-card) 0%, #F5F1E8 100%);
+            color: var(--light-text);
+            border-top: 1px solid rgba(184, 148, 31, 0.2);
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--soft-gold);
+        }
+
+        body.light-theme .footer-logo {
+            color: var(--light-accent);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+        }
+
+        body.light-theme .copyright {
+            color: var(--light-text);
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .header-content {
+                padding: 0 2rem;
+            }
+
+            .brand-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .brand-text {
+                font-size: 1.8rem;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 3rem 2rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .controls {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .sort-controls {
+                width: auto;
+                flex: 1;
+                justify-content: flex-end;
+            }
+
+            .sort-select {
+                flex: none;
+                width: auto;
+            }
+
+            .item-count {
+                flex: none;
+                width: auto;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 2rem;
+            }
+
+            .piece-image {
+                height: 180px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+
+            .piece-image {
+                height: 200px;
+            }
+        }
+
+        /* RTL Support */
+        body[dir="rtl"] {
+            text-align: right;
+        }
+
+        body[dir="rtl"] .section-title::after {
+            left: auto;
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        body[dir="rtl"] .modal-spec-item {
+            border-left: none;
+            border-right: 3px solid var(--rich-gold);
+        }
+
+        body.light-theme[dir="rtl"] .modal-spec-item {
+            border-right: 3px solid var(--light-accent);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="brand">
+                <div class="brand-logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 20 L60 45 L80 45 L65 60 L75 85 L50 70 L25 85 L35 60 L20 45 L40 45 Z' fill='white'/%3E%3C/svg%3E" alt="Mirna Chakaron Jewellery Logo">
+                </div>
+                <div class="brand-text" data-en="Mirna Chakaron Jewellery" data-ar="ميرنا شكرون للمجوهرات">Mirna Chakaron Jewellery</div>
+            </div>
+            <div class="nav-actions">
+                <a class="nav-link" href="#goldPricing" data-en="Gold Prices" data-ar="أسعار الذهب">Gold Prices</a>
+                <a class="nav-link" href="#gallery" data-en="Collection" data-ar="المجموعة">Collection</a>
+                <div class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="lang-toggle" id="langToggle" data-lang="en">
+                    <i class="fas fa-language"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-en="Mirna Chakaron Jewellery" data-ar="ميرنا شكرون للمجوهرات">Mirna Chakaron Jewellery</h1>
+            <p class="hero-subtitle" data-en="Timeless Elegance, Crafted to Perfection" data-ar="أناقة خالدة، مصنوعة بإتقان">Timeless Elegance, Crafted to Perfection</p>
+            <p class="hero-tagline" data-en="Discover our exquisite collection of handcrafted gold jewelry, where traditional artistry meets contemporary design." data-ar="اكتشف مجموعتنا الرائعة من المجوهرات الذهبية المصنوعة يدويًا، حيث تلتقي الحرفية التقليدية بالتصميم المعاصر.">Discover our exquisite collection of handcrafted gold jewelry, where traditional artistry meets contemporary design.</p>
+            <a class="cta-button" href="#gallery" data-en="Explore Collection" data-ar="استكشف المجموعة">Explore Collection</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Gold Price Information -->
+        <div class="gold-price-info" id="goldPricing">
+            <h3 data-en="Live Gold Pricing" data-ar="أسعار الذهب المباشرة">Live Gold Pricing</h3>
+            <div class="gold-price-display" id="goldPriceDisplay">
+                <div class="loading" data-en="Loading current gold prices..." data-ar="جاري تحميل أسعار الذهب الحالية...">Loading current gold prices...</div>
+            </div>
+        </div>
+
+        <h2 class="section-title" data-en="Our Collection" data-ar="مجموعتنا">Our Collection</h2>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all" data-en="All Pieces" data-ar="كل القطع">All Pieces</button>
+                <button class="filter-btn" data-filter="Available" data-en="Available" data-ar="متوفر">Available</button>
+                <button class="filter-btn" data-filter="Sold" data-en="Sold" data-ar="مباع">Sold</button>
+                <select class="filter-btn" id="categoryFilter" style="appearance: menulist; padding: 0.6rem 1.2rem;">
+                    <option value="all" data-en="All Categories" data-ar="كل الفئات">All Categories</option>
+                </select>
+            </div>
+
+            <div class="sort-controls">
+                <select class="sort-select" id="sortSelect">
+                    <option value="default" data-en="Sort By" data-ar="ترتيب حسب">Sort By</option>
+                    <option value="price-low" data-en="Price: Low to High" data-ar="السعر: من الأقل للأعلى">Price: Low to High</option>
+                    <option value="price-high" data-en="Price: High to Low" data-ar="السعر: من الأعلى للأقل">Price: High to Low</option>
+                    <option value="weight-low" data-en="Weight: Low to High" data-ar="الوزن: من الأقل للأعلى">Weight: Low to High</option>
+                    <option value="weight-high" data-en="Weight: High to Low" data-ar="الوزن: من الأعلى للأقل">Weight: High to Low</option>
+                </select>
+
+                <span class="item-count" id="itemCount" data-en="0 items" data-ar="0 عنصر">0 items</span>
+            </div>
+        </div>
+
+        <!-- Gallery -->
+        <div id="gallery" class="gallery">
+            <div class="loading" data-en="Loading our luxury collection..." data-ar="جاري تحميل مجموعتنا الفاخرة...">Loading our luxury collection...</div>
+        </div>
+    </div>
+
+    <!-- Modal for item details -->
+    <div class="modal-overlay" id="itemModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-content" id="modalContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo" data-en="Mirna Chakaron Jewellery" data-ar="ميرنا شكرون للمجوهرات">Mirna Chakaron Jewellery</div>
+            <p class="copyright">&copy; <span id="currentYear"></span> <span data-en="Mirna Chakaron Jewellery. All rights reserved." data-ar="ميرنا شكرون للمجوهرات. جميع الحقوق محفوظة.">Mirna Chakaron Jewellery. All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+
+        // Google Sheets URL
+        const SHEET_URL = "https://opensheet.elk.sh/1ryAiuHappi7mJ4cZYRn6ptlR3WPTesj7aF7nywuvEzc/Master%20Inventory";
+
+        // Gold price API endpoints
+        const GOLDAPI_FREE = [
+            "https://api.gold-api.com/price/XAU",
+            "https://api.gold-api.com/price/XAU/USD",
+            "https://www.gold-api.com/price/XAU",
+            "https://www.gold-api.com/price/XAU/USD"
+        ];
+
+        // Global variables
+        let currentGoldOz = 2000; // Fallback gold price
+        let jewelryData = [];
+        let priceUpdateInterval;
+        let currentFilter = 'all';
+        let currentSort = 'default';
+        let currentCategory = 'all';
+        let allCards = []; // Store all card elements
+        let currentLanguage = 'en';
+        let currentTheme = 'dark';
+
+        // Function to fetch all data from Google Sheets
+        async function fetchJewelryData() {
+            try {
+                const response = await fetch(SHEET_URL);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching jewelry pieces:', error);
+                return [];
+            }
+        }
+
+        // Function to extract status from the data
+        function getStatus(piece) {
+            // In the sample data, there's no explicit status field
+            // We'll assume all items are available for this example
+            // In a real implementation, you would check the actual status field
+            return "Available";
+        }
+
+        // Function to extract piece type from the data
+        function getPieceType(pieceTypeField) {
+            if (!pieceTypeField) return currentLanguage === 'en' ? 'Jewelry Piece' : 'قطعة مجوهرات';
+            const parts = pieceTypeField.split(',');
+            return parts[0] || pieceTypeField;
+        }
+
+        // Function to extract karat from the karat field
+        function extractKarat(karatField) {
+            if (!karatField) return '';
+            const match = karatField.match(/(\d+)\s*[kK]/);
+            return match ? match[1] : '';
+        }
+
+        // Calculate total fees per gram
+        function getTotalFeesPerGram(piece) {
+            if (!piece || typeof piece !== 'object') return 4; // Default fee
+
+            const laborFee = parseFloat(piece['أجور بالغرام ex 2.5']);
+            const profitPerGram = parseFloat(piece['ربح بالغرام ex 2.5']);
+            const hasLaborFee = Number.isFinite(laborFee);
+            const hasProfitPerGram = Number.isFinite(profitPerGram);
+
+            if (hasLaborFee || hasProfitPerGram) {
+                return (hasLaborFee ? laborFee : 0) + (hasProfitPerGram ? profitPerGram : 0);
+            }
+
+            return 4; // Default fee
+        }
+
+        // Fetch live gold price
+        async function getSpotFast() {
+            const timeoutFetch = (url, ms) => {
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), ms);
+                return fetch(url, { signal: controller.signal, cache: "no-store" })
+                    .finally(() => clearTimeout(timeout));
+            };
+
+            const tries = GOLDAPI_FREE.map(url =>
+                timeoutFetch(url, 3500)
+                    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+                    .then(data => {
+                        // Extract ounce price from various API response formats
+                        const price = data?.price || data?.usd || data?.usd_ounce || 
+                                     data?.price_ounce || data?.ounce || data?.oz ||
+                                     data?.result?.price || data?.XAU?.USD;
+                        return Number(price) || NaN;
+                    })
+                    .then(price => (isFinite(price) && price > 0) ? price : Promise.reject("bad"))
+            );
+            
+            return Promise.any(tries);
+        }
+
+        // Calculate price per gram for different karats with fees
+        function perGramForKarat(oz, karatStr, fee) {
+            const k = String(karatStr || "").toLowerCase();
+            const add = Number.isFinite(fee) ? fee : 15; // Default making fee if not provided
+            
+            // Gold calculation formulas based on karat
+            if (/\b18\b/.test(k)) return (((oz + 100) * 32 * 750 / 995) / 1000) + add;
+            if (/\b21\b/.test(k)) return (((oz + 100) * 32 * 875 / 995) / 1000) + add;
+            if (/\b22\b/.test(k)) return (((oz + 100) * 32 * 916 / 995) / 1000) + add;
+            if (/\b24\b/.test(k)) return ((oz + 100) / 31.1) + add;
+            
+            return NaN;
+        }
+
+        // Calculate final item price: (price per gram + fee) × weight in grams
+        function computeItemPriceUSD(oz, product) {
+            const weight = parseFloat(product.weight) || 0;
+            if (!Number.isFinite(weight) || weight <= 0) return NaN;
+
+            const fee = parseFloat(product.makingFee);
+            const pricePerGram = perGramForKarat(oz, product.karat, fee);
+
+            return Number.isFinite(pricePerGram) ? (pricePerGram * weight) : NaN;
+        }
+
+        // Format price for display
+        function formatPrice(amount) {
+            if (!isFinite(amount)) return currentLanguage === 'en' ? 'Price on request' : 'السعر عند الطلب';
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+
+        // Update gold price display
+        function updateGoldPriceDisplay(goldOz) {
+            const goldPriceDisplay = document.getElementById('goldPriceDisplay');
+            if (!goldPriceDisplay) return;
+
+            const lastUpdated = new Date().toLocaleTimeString();
+            const goldText = currentLanguage === 'en' ? 'Gold' : 'الذهب';
+            const updatedText = currentLanguage === 'en' ? 'Last updated' : 'آخر تحديث';
+            
+            goldPriceDisplay.innerHTML = `
+                <div class="gold-price-item">${goldText}: $${Math.round(goldOz).toLocaleString()}/oz</div>
+                <div class="gold-price-item">${updatedText}: ${lastUpdated}</div>
+            `;
+        }
+
+        // Create jewelry piece card with live pricing
+        function createPieceCard(piece, goldOz) {
+            const card = document.createElement('div');
+            card.className = 'piece-card';
+            
+            // Store data attributes for filtering and sorting
+            const status = getStatus(piece);
+            const category = getPieceType(piece['نوع القطعة']);
+            const weight = parseFloat(piece['weight, الوزن  ex:2.3']) || 0;
+            const totalFeePerGram = getTotalFeesPerGram(piece);
+            const price = computeItemPriceUSD(goldOz, {
+                weight: weight,
+                karat: extractKarat(piece['karat , العيار']),
+                makingFee: totalFeePerGram
+            });
+
+            card.dataset.status = status;
+            card.dataset.price = isFinite(price) ? price : 0;
+            card.dataset.weight = weight;
+            card.dataset.category = category;
+            
+            // Use placeholder image (in a real implementation, you would use actual product photos)
+            const imageUrl = 'https://via.placeholder.com/400x300/0A0E17/D4AF37?text=Mirna+Chakaron';
+            
+            const statusText = currentLanguage === 'en' ? status : (status === 'Available' ? 'متوفر' : 'مباع');
+            const weightText = currentLanguage === 'en' ? 'Weight' : 'الوزن';
+            const karatText = currentLanguage === 'en' ? 'Karat' : 'العيار';
+            
+            card.innerHTML = `
+                <img src="${imageUrl}" alt="${category}" class="piece-image">
+                <div class="piece-details">
+                    <div class="piece-title">
+                        ${category}
+                        <span class="piece-sku">${piece['sku '] || 'N/A'}</span>
+                    </div>
+                    
+                    <div class="piece-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">${weightText}</span>
+                            <span class="spec-value">${piece['weight, الوزن  ex:2.3'] || 'N/A'}g</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">${karatText}</span>
+                            <span class="spec-value">${piece['karat , العيار'] || 'N/A'}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="piece-status">
+                        <span class="status-${status.toLowerCase()}">${statusText}</span>
+                        <div class="piece-price">${formatPrice(price)}</div>
+                    </div>
+                </div>
+            `;
+
+            // Add click event to open modal
+            card.addEventListener('click', () => {
+                openItemModal(piece, goldOz);
+            });
+
+            return card;
+        }
+
+        // Update prices without reloading cards
+        function updatePricesOnly(goldOz) {
+            const priceElements = document.querySelectorAll('.piece-price');
+            priceElements.forEach((priceElement, index) => {
+                const card = priceElement.closest('.piece-card');
+                if (card && jewelryData[index]) {
+                    const piece = jewelryData[index];
+                    const weight = parseFloat(piece['weight, الوزن  ex:2.3']) || 0;
+                    const totalFeePerGram = getTotalFeesPerGram(piece);
+                    const price = computeItemPriceUSD(goldOz, {
+                        weight: weight,
+                        karat: extractKarat(piece['karat , العيار']),
+                        makingFee: totalFeePerGram
+                    });
+                    
+                    priceElement.textContent = formatPrice(price);
+                    card.dataset.price = isFinite(price) ? price : 0;
+                }
+            });
+
+            // Update modal price if open
+            const modalPrice = document.querySelector('.modal-price');
+            if (modalPrice) {
+                const modal = modalPrice.closest('.modal-content');
+                if (modal) {
+                    const sku = modal.querySelector('.modal-spec-value').textContent;
+                    const piece = jewelryData.find(p => p['sku '] === sku);
+                    if (piece) {
+                        const weight = parseFloat(piece['weight, الوزن  ex:2.3']) || 0;
+                        const totalFeePerGram = getTotalFeesPerGram(piece);
+                        const price = computeItemPriceUSD(goldOz, {
+                            weight: weight,
+                            karat: extractKarat(piece['karat , العيار']),
+                            makingFee: totalFeePerGram
+                        });
+                        modalPrice.textContent = formatPrice(price);
+                    }
+                }
+            }
+        }
+
+        // Filter and sort jewelry pieces
+        function filterAndSortPieces() {
+            const galleryElement = document.getElementById('gallery');
+            if (!galleryElement || !allCards.length) return;
+            
+            // Start with all cards
+            let filteredCards = [...allCards];
+            
+            // Filter by status
+            if (currentFilter !== 'all') {
+                filteredCards = filteredCards.filter(card => card.dataset.status === currentFilter);
+            }
+            
+            // Filter by category
+            if (currentCategory !== 'all') {
+                filteredCards = filteredCards.filter(card => card.dataset.category === currentCategory);
+            }
+            
+            // Sort cards
+            switch (currentSort) {
+                case 'price-low':
+                    filteredCards.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+                    break;
+                case 'price-high':
+                    filteredCards.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+                    break;
+                case 'weight-low':
+                    filteredCards.sort((a, b) => parseFloat(a.dataset.weight) - parseFloat(b.dataset.weight));
+                    break;
+                case 'weight-high':
+                    filteredCards.sort((a, b) => parseFloat(b.dataset.weight) - parseFloat(a.dataset.weight));
+                    break;
+                default:
+                    // Default sorting (no change)
+                    break;
+            }
+            
+            // Clear the gallery
+            galleryElement.innerHTML = '';
+            
+            // Add filtered and sorted cards
+            filteredCards.forEach(card => galleryElement.appendChild(card));
+            
+            // Update item count
+            updateItemCount(filteredCards.length);
+        }
+
+        // Update item count display
+        function updateItemCount(count) {
+            const itemCountElement = document.getElementById('itemCount');
+            if (itemCountElement) {
+                let label = '';
+                if (currentLanguage === 'en') {
+                    if (count === 0) label = 'No items';
+                    else if (count === 1) label = '1 item';
+                    else label = `${count} items`;
+                } else {
+                    if (count === 0) label = 'لا توجد عناصر';
+                    else if (count === 1) label = 'عنصر واحد';
+                    else if (count === 2) label = 'عنصران';
+                    else if (count <= 10) label = `${count} عناصر`;
+                    else label = `${count} عنصر`;
+                }
+                itemCountElement.textContent = label;
+            }
+        }
+
+        // Update all prices with current gold rate
+        function updateAllPrices(goldOz) {
+            const galleryElement = document.getElementById('gallery');
+            if (!galleryElement || !jewelryData.length) return;
+            
+            galleryElement.innerHTML = '';
+            allCards = [];
+            
+            jewelryData.forEach((piece, index) => {
+                const card = createPieceCard(piece, goldOz);
+                const delay = Math.min(index * 0.05, 0.5);
+                card.style.setProperty('--card-delay', `${delay}s`);
+                allCards.push(card);
+            });
+
+            // Update categories dropdown
+            updateCategoryFilter();
+
+            // Apply current filters and sorting
+            filterAndSortPieces();
+        }
+
+        // Update category filter dropdown
+        function updateCategoryFilter() {
+            const categorySelect = document.getElementById('categoryFilter');
+            if (!categorySelect) return;
+            
+            // Get unique categories
+            const categories = [...new Set(jewelryData.map(piece => 
+                getPieceType(piece['نوع القطعة'])
+            ))];
+            
+            // Clear existing options (except "All Categories")
+            while (categorySelect.children.length > 1) {
+                categorySelect.removeChild(categorySelect.lastChild);
+            }
+            
+            // Add category options
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categorySelect.appendChild(option);
+            });
+        }
+
+        // Open item modal with details
+        function openItemModal(piece, goldOz) {
+            const modal = document.getElementById('itemModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            if (!modal || !modalContent) return;
+            
+            // Use placeholder image
+            const imageUrl = 'https://via.placeholder.com/500x400/0A0E17/D4AF37?text=Mirna+Chakaron+Jewellery';
+
+            // Extract karat for calculation
+            const karat = extractKarat(piece['karat , العيار']);
+
+            // Calculate price using live gold price
+            const price = computeItemPriceUSD(goldOz, {
+                weight: piece['weight, الوزن  ex:2.3'],
+                karat: karat,
+                makingFee: getTotalFeesPerGram(piece)
+            });
+
+            const status = getStatus(piece);
+            const statusText = currentLanguage === 'en' ? status : (status === 'Available' ? 'متوفر' : 'مباع');
+            const category = getPieceType(piece['نوع القطعة']);
+            
+            // Text translations
+            const skuText = currentLanguage === 'en' ? 'SKU' : 'الرمز';
+            const weightText = currentLanguage === 'en' ? 'Weight' : 'الوزن';
+            const karatText = currentLanguage === 'en' ? 'Karat' : 'العيار';
+            const typeText = currentLanguage === 'en' ? 'Type' : 'النوع';
+            const categoryText = currentLanguage === 'en' ? 'Category' : 'الفئة';
+
+            // Populate modal content
+            modalContent.innerHTML = `
+                <div class="modal-image">
+                    <img src="${imageUrl}" alt="${category}">
+                </div>
+                <div class="modal-details">
+                    <h2 class="modal-title">${category}</h2>
+                    <div class="modal-price">${formatPrice(price)}</div>
+                    
+                    <div class="modal-specs">
+                        <div class="modal-spec-item">
+                            <span class="modal-spec-label">${skuText}</span>
+                            <span class="modal-spec-value">${piece['sku '] || 'N/A'}</span>
+                        </div>
+                        <div class="modal-spec-item">
+                            <span class="modal-spec-label">${weightText}</span>
+                            <span class="modal-spec-value">${piece['weight, الوزن  ex:2.3'] || 'N/A'}g</span>
+                        </div>
+                        <div class="modal-spec-item">
+                            <span class="modal-spec-label">${karatText}</span>
+                            <span class="modal-spec-value">${piece['karat , العيار'] || 'N/A'}</span>
+                        </div>
+                        <div class="modal-spec-item">
+                            <span class="modal-spec-label">${typeText}</span>
+                            <span class="modal-spec-value">${category}</span>
+                        </div>
+                        <div class="modal-spec-item">
+                            <span class="modal-spec-label">${categoryText}</span>
+                            <span class="modal-spec-value">${category}</span>
+                        </div>
+                    </div>
+
+                    <span class="modal-status status-${status.toLowerCase()}">${statusText}</span>
+                </div>
+            `;
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        // Close item modal
+        function closeItemModal() {
+            const modal = document.getElementById('itemModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        }
+
+        // Initialize the gallery with live pricing
+        async function initGallery() {
+            const galleryElement = document.getElementById('gallery');
+            galleryElement.innerHTML = '<div class="loading">Loading our luxury collection...</div>';
+            
+            // Fetch jewelry data and gold price simultaneously
+            try {
+                const [data, goldPrice] = await Promise.all([
+                    fetchJewelryData(),
+                    getSpotFast().catch(err => {
+                        console.error('Failed to fetch gold price, using fallback', err);
+                        return 2000; // Fallback price
+                    })
+                ]);
+                
+                jewelryData = data;
+                currentGoldOz = goldPrice;
+                
+                // Update gold price display
+                updateGoldPriceDisplay(currentGoldOz);
+                
+                // Render gallery with current prices
+                updateAllPrices(currentGoldOz);
+                
+                // Set up periodic price updates
+                priceUpdateInterval = setInterval(async () => {
+                    try {
+                        const newGoldPrice = await getSpotFast();
+                        currentGoldOz = newGoldPrice;
+                        updateGoldPriceDisplay(currentGoldOz);
+                        updatePricesOnly(currentGoldOz); // Only update prices, not entire cards
+                    } catch (error) {
+                        console.error('Error updating gold price:', error);
+                    }
+                }, 30000); // Update every 30 seconds
+                
+            } catch (error) {
+                console.error('Error initializing gallery:', error);
+                galleryElement.innerHTML = '<div class="loading">Error loading data. Please try again later.</div>';
+            }
+        }
+
+        // Toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+            document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLanguage;
+            
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
+                if (element.hasAttribute(`data-${currentLanguage}`)) {
+                    element.textContent = element.getAttribute(`data-${currentLanguage}`);
+                }
+            });
+            
+            // Update the language toggle button
+            const langToggle = document.getElementById('langToggle');
+            if (langToggle) {
+                langToggle.setAttribute('data-lang', currentLanguage);
+            }
+            
+            // Update prices and item count
+            updatePricesOnly(currentGoldOz);
+            filterAndSortPieces();
+        }
+
+        // Toggle theme
+        function toggleTheme() {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.body.classList.toggle('light-theme', currentTheme === 'light');
+            
+            // Update theme toggle icon
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                const icon = themeToggle.querySelector('i');
+                if (icon) {
+                    icon.className = currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+                }
+            }
+        }
+
+        // Set up filter button event listeners
+        function setupFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Update current filter
+                    currentFilter = button.dataset.filter;
+                    
+                    // Apply filters
+                    filterAndSortPieces();
+                });
+            });
+            
+            // Set up sorting select
+            const sortSelect = document.getElementById('sortSelect');
+            if (sortSelect) {
+                sortSelect.addEventListener('change', (e) => {
+                    currentSort = e.target.value;
+                    filterAndSortPieces();
+                });
+            }
+
+            // Set up category filter
+            const categoryFilter = document.getElementById('categoryFilter');
+            if (categoryFilter) {
+                categoryFilter.addEventListener('change', (e) => {
+                    currentCategory = e.target.value;
+                    filterAndSortPieces();
+                });
+            }
+
+            // Set up modal close button
+            const modalClose = document.getElementById('modalClose');
+            if (modalClose) {
+                modalClose.addEventListener('click', closeItemModal);
+            }
+            
+            // Close modal when clicking outside
+            const modalOverlay = document.getElementById('itemModal');
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', (e) => {
+                    if (e.target === modalOverlay) {
+                        closeItemModal();
+                    }
+                });
+            }
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeItemModal();
+                }
+            });
+
+            // Set up theme toggle
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+
+            // Set up language toggle
+            const langToggle = document.getElementById('langToggle');
+            if (langToggle) {
+                langToggle.addEventListener('click', toggleLanguage);
+            }
+        }
+
+        // Initialize the gallery when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            initGallery();
+            setupFilters();
+        });
+
+        // Clean up interval when page unloads
+        window.addEventListener('beforeunload', () => {
+            if (priceUpdateInterval) {
+                clearInterval(priceUpdateInterval);
+            }
+        });
+    </script>
+</body>
+</html>
